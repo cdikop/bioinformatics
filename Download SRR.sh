@@ -1,3 +1,4 @@
+#!/bin/bash
 ##########################################
 #   Program:
 #       Download SRR 
@@ -6,6 +7,7 @@
 #   Author:
 #       DTurtle
 ##########################################
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 for id in SRR_list.txt
 do 
 prefetch $id
