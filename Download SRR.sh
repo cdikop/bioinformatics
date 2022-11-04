@@ -6,3 +6,10 @@
 #   Author:
 #       DTurtle
 ##########################################
+for id in SRR_list.txt
+do 
+prefetch $id
+echo $id
+done
+
+
