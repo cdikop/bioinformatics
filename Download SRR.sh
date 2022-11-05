@@ -18,9 +18,11 @@ read SRR_list  # input the list
 # download
 cat $SRR_list | while read id
 do 
+nohup # increase nohup
 prefetch $id
 echo $id
 echo $(time())   # running time
+>> prefetch.log 2>>&1 &
 done
 
 
