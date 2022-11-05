@@ -11,7 +11,7 @@
 PATH=${PATH}:/home/d/sratoolkit.3.0.0-ubuntu64/bin # add the prefetch to PATH
 export $PATH
 ###################################################
-list=ls SRR[0-9]*   # inquire the list of transformation
+list=$(ls SRR[0-9]*.sra)   # inquire the list of transformation
 for i in list
 do
 fasterq-dump -O ./fastq_file \
