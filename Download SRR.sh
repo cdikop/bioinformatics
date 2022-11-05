@@ -7,11 +7,20 @@
 #   Author:
 #       DTurtle
 ##########################################
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-for id in SRR_list.txt
+
+PATH=${PATH}:/sratoolkit.3.0.0-ubuntu64/bin # add the prefetch to PATH
+export $PATH
+###################################################
+# list
+echo "Please input SRR list.txt"
+read SRR_list  # input the list
+###########################################
+# circle
+cat $SRR_list | while read id
 do 
 prefetch $id
 echo $id
+echo $(time())   #输出一下运行时间
 done
 
 
