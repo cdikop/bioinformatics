@@ -21,4 +21,7 @@ fasterq-dump -O ./fastq_file \
 --threads 20                 \ 
 --include-technical          \ #include technical reads
 $i
+echo $(time())
+echo $i
+done
 >> fasterq.log 2>>&1 &
