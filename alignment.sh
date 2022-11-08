@@ -19,8 +19,8 @@ for i in $list
 do
 bowtie2 \
 -x /home/data/t190305/Chip-seq/index/GRCh38.p13.genome.fa.gz \
--p 30 \    # the threads
--U $i \    # single file
--S $i.sam \  # output file
---no-unal    # don't output unpaired reads
+-p 30 \ # the threads
+-U $i \ # single file
+-S $i.sam \ # output file
+--no-unal  # don't output unpaired reads
 done
