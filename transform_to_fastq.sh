@@ -9,17 +9,12 @@
 #################################################
 # PATH
 PATH=${PATH}:/home/data/sratoolkit.3.0.0-ubuntu64/bin # add the prefetch to PATH
-export $PATH
 ###################################################
-list=$(find ./ -name "*.sra")   # inquire the list of transformation
-for i in list
+list=$(find ./ -type d | grep "SRR")   # inquire the list of transformation
+for i in $list
 do
-fasterq-dump -O ./fastq_file \
---progress                   \
---split-3                \
---threads 20                 \ 
---include-technical          \ #include technical reads
-$i
+fasterq-dump -O ./fastq      \
+--split-3                    \
+--threads 20 $i                
 echo $(date)
-echo $i
 done
