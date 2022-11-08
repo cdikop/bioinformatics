@@ -8,13 +8,13 @@
 #       DTurtle
 #################################################
 # PATH
-PATH=${PATH}:/home/data/sratoolkit.3.0.0-ubuntu64/bin # add the prefetch to PATH
+PATH=${PATH}:/home/data/t190305/sratoolkit.3.0.0-ubuntu64/bin # add the prefetch to PATH
 ###################################################
 list=$(find ./ -type d | grep "SRR")   # inquire the list of transformation
 for i in $list
 do
 fasterq-dump -O ./fastq      \
 --split-3                    \
---threads 20 $i                
+--threads 30 $i                
 echo $(date)
 done
