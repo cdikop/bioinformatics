@@ -1,7 +1,7 @@
 #!/bin/bash
 ##########################################
 #   Program:
-#       Transform SRR to fastq
+#       alignment
 #   History:
 #       2022/11/8 1.1
 #   Author:
