@@ -1,18 +1,18 @@
 #！/bin/bash
 #########################################
 #   program:
-#       Transforming sam to bam
+#       set the index of bam
 #   History:
 #       2022/11/11 1.0
 #   Author:
 #       DTurtle
 ###################################################
 #make the list
-cd /home/data/t190305/Chip-seq/sam
-list=$(ls | grep .bam$)
+cd /home/data/t190305/Chip-seq/bam
+list=$(ls | grep .sort.bam$)
 ####################################################
-# sort bam
+# set index
 for i in $list
 do
-samtools sort -O BAM -m 2G -@ 20 -b -S $i > ${i%.bam}.sort.bam 
+samtools index -@ 20 $i
 done
